@@ -43,10 +43,7 @@ coordinate(1,:) = [repmat(SE,1,length(2:(length(myImage)-1))),(SE+1):(length(myI
 
 for i=1:N
     if (~((abs(pointsRelativeLocation(i,2) - rx(i)) < 1e-5) && (abs(pointsRelativeLocation(i,1) - ry(i)) < 1e-5)))
-       
-     
-        
-        if (pointsRelativeLocation(i,1) > 0) 
+        if (pointsRelativeLocation(i,1) > 0)
             w2 = pointsRelativeLocation(i,1) - floor(pointsRelativeLocation(i,1));
         else
             w2 = 1-abs(pointsRelativeLocation(i,1) - floor(pointsRelativeLocation(i,1)));
@@ -63,8 +60,7 @@ for i=1:N
         w2 = w2/2 ; 
         w3 = w3/2 ; 
         w4 = w4/2 ; 
-      
-        myImage(coordinate(1,i),coordinate(2,i)) = w1*I(coordinate(1,i)+1,coordinate(2,i)) + w2*I(coordinate(1,i),coordinate(2,i)+1) + w3*I(coordinate(1,i)-1,coordinate(2,i)) + w4*I(coordinate(1,i),coordinate(2,i)-1);    
+        myImage(coordinate(1,i),coordinate(2,i)) = w1*I(coordinate(1,i)+1,coordinate(2,i)) + w2*I(coordinate(1,i),coordinate(2,i)+1) + w3*I(coordinate(1,i)-1,coordinate(2,i)) + w4*I(coordinate(1,i),coordinate(2,i)-1);
     end
 end
 
